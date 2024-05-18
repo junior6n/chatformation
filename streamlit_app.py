@@ -112,7 +112,7 @@ def coursera_scrap(keyphrases, formation_data):
           images = img_tag.attrs['src'] # src c'est l'attribut qui a pout valeur le lien de l'image
           # print(images)
           img = f"https://{images.split(':')[2]}".replace("////", "//")
-          if(img == None)
+          if(img == None):
               img = ""
 
           # le titre du cours
