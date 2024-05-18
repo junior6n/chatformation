@@ -151,8 +151,8 @@ def coursera_scrap(keyphrases, formation_data):
             for dl in descs_li_tags:
                 descs_list.append(f"- {dl.text}")
             descriptions = '\n'.join(descs_list)
-              if(description == None):
-                  descriptions = [""]
+            if(description == None):
+                descriptions = [""]
             break   # pour arreter
 
           # stockage des Information sur la formation
