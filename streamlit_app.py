@@ -125,7 +125,7 @@ def coursera_scrap(keyphrases, formation_data):
           comp_tag = course_info.find('div',{'class':"cds-CommonCard-bodyContent"})
           if(comp_tag != None):
             comp = comp_tag.text.split(":")[1]
-          else 
+          else: 
             comp = ""
 
           # le lien de la formation
