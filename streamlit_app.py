@@ -137,6 +137,7 @@ def coursera_scrap(keyphrases, formation_data):
 
           # ressayer trois fois
           j = 0   # counteur
+          descriptiontions = [""]
           while(j<3):
             soup2 = BeautifulSoup(requests.get(link).text, 'html.parser')
             desc_ul_tag = soup2.find('ul', {'class': 'cds-9 css-7avemv cds-10'})
@@ -151,7 +152,7 @@ def coursera_scrap(keyphrases, formation_data):
             for dl in descs_li_tags:
                 descs_list.append(f"- {dl.text}")
             descriptions = '\n'.join(descs_list)
-            if(description == None):
+            if(descriptions == None):
                 descriptions = [""]
             break   # pour arreter
 
