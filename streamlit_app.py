@@ -123,11 +123,10 @@ def coursera_scrap(keyphrases, formation_data):
 
           # competence a acquerrir
           comp_tag = course_info.find('div',{'class':"cds-CommonCard-bodyContent"})
+          comp = ""
           if(comp_tag != None):
             comp = comp_tag.text.split(":")[1]
-          else: 
-            comp = ""
-
+            
           # le lien de la formation
           link = f"https://www.coursera.org{title_tag.attrs['href']}"
           if (link == None):
