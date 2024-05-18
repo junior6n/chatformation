@@ -112,18 +112,26 @@ def coursera_scrap(keyphrases, formation_data):
           images = img_tag.attrs['src'] # src c'est l'attribut qui a pout valeur le lien de l'image
           # print(images)
           img = f"https://{images.split(':')[2]}".replace("////", "//")
+          if(img == None)
+              img = ""
 
           # le titre du cours
           title_tag = course_info.find('a') # la balise ancre qui contient le titre et le lien de la formation
           title = title_tag.text # titre de la formation
+          if (title == None):
+              title = ""
 
           # competence a acquerrir
           comp_tag = course_info.find('div',{'class':"cds-CommonCard-bodyContent"})
           if(comp_tag != None):
             comp = comp_tag.text.split(":")[1]
+          else 
+            comp = ""
 
           # le lien de la formation
           link = f"https://www.coursera.org{title_tag.attrs['href']}"
+          if (link == None):
+              link=""
 
           # Ce que vous aller apprendre
 
@@ -143,14 +151,12 @@ def coursera_scrap(keyphrases, formation_data):
             for dl in descs_li_tags:
                 descs_list.append(f"- {dl.text}")
             descriptions = '\n'.join(descs_list)
+              if(description == None):
+                  descriptions = [""]
             break   # pour arreter
 
           # stockage des Information sur la formation
-          form = {'image': img, 'titre': title,  'description': descriptions, 'lien': link}
-          if comp != None:
-            form['competence'] = f"Skills you will gain: {comp}"
-          else :
-            form['competence'] = None
+          form = {'image': img, 'titre': title, 'competence': comp,  'description': descriptions, 'lien': link}
           formation_data['coursera.org'].append(form)
 
           # print('Titre: ', title)
