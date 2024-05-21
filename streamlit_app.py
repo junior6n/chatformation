@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+il#!/usr/bin/env python
 # coding: utf-8
 
 # ## Librairie a importer
@@ -125,8 +125,7 @@ def coursera_scrap(keyphrases, formation_data):
           comp_tag = course_info.find('div',{'class':"cds-CommonCard-bodyContent"})
           
           comp = comp_tag.text.split(":")[1]
-          if(comp_tag == None):
-             comp = ""
+      
             
           # le lien de la formation
           link = f"https://www.coursera.org{title_tag.attrs['href']}"
