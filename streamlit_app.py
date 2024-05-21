@@ -88,7 +88,7 @@ def coursera_scrap(keyphrases, formation_data):
   nombre_page = 1      #le nombre de page ou qu'on doit extrait les donnee, chaque page propose au maximum les information sur 12 formation
   i = 0     # le conteur initial, de la premiere boucle, qui control le nombre de page choisir
 
-  query_ans = '%20'.join(keyphrases[:10])      # la combinaison des mot cle en un seul phrase qui va etre utiliser pour la recherche
+  query_ans = '%20'.join(keyphrases)      # la combinaison des mot cle en un seul phrase qui va etre utiliser pour la recherche
 
   while(i<nombre_page):
       url = f"https://www.coursera.org/search?query={query_ans}&page={i+1}&sortBy=BEST_MATCH"
